@@ -36,6 +36,12 @@ const addAddress = async (req, res) => {
   } catch (error) {
     res.status(400).json({ message: 'Invalid address data.' })
   }
+
+  const address = await Address.create({
+    title,
+    description,
+  })
+
 }
 
 // @desc   Delete an address
